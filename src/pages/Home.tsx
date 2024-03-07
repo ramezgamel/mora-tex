@@ -1,7 +1,8 @@
 import Carousel from "../components/Carousel";
 import Product from "../components/Product";
 import { ProductInterface } from "../types/Product";
-
+import { motion as m } from "framer-motion";
+import { childrenVariants, parentVariants } from "../animation/Stagger";
 export default function Home() {
   const products: ProductInterface[] = [
     {
@@ -9,7 +10,7 @@ export default function Home() {
       name: "T-shirt round",
       price: 12.5,
       images: ["https://placehold.co/500", "as"],
-      size: ["l", "xl", "2xl"],
+      size: ["l", "xl", "2xl", "3xl"],
       colors: ["red", "black"],
       description: "asdsf",
       discount: 13,
@@ -68,18 +69,18 @@ export default function Home() {
   return (
     <div>
       <Carousel />
-      <div className="grid grid-cols-2 gap-3 gap-y-5">
+      <m.div
+        initial="hidden"
+        animate="visible"
+        variants={parentVariants}
+        className="grid grid-cols-2 gap-3 gap-y-5"
+      >
         {products.map((prd) => (
-          <Product product={prd} key={prd._id} />
+          <m.div key={prd._id} variants={childrenVariants}>
+            <Product product={prd} />
+          </m.div>
         ))}
-        {/* <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product /> */}
-      </div>
+      </m.div>
     </div>
   );
 }

@@ -1,11 +1,11 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import CartPanel from "./CartPanel";
 import FavPanel from "./FavPanel";
 
 export default function Header() {
   return (
     <nav className="px-6 py-4 flex justify-between shadow-md">
-      <div>Logo</div>
+      <Link to="/">Logo</Link>
       <div className="flex gap-6">
         <ul className="flex gap-2">
           <NavLink to="/">Home</NavLink>

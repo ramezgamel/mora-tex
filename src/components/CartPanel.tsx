@@ -46,7 +46,7 @@ export default function CartPanel() {
         <div className="mt-2 font-bold text-center">
           Total:{" "}
           {products
-            .reduce((prev, curr, acc) => curr.qty * curr.price + acc, 0)
+            .reduce((_prev, curr, acc) => curr.qty * curr.price + acc, 0)
             .toFixed(2)}{" "}
           EGP
         </div>

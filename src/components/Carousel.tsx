@@ -89,7 +89,7 @@ export default function Carousel() {
         <div className="flex justify-center items-center gap-2">
           {products?.map((prd, index) => (
             <button
-              key={index}
+              key={prd._id}
               type="button"
               className={`${
                 view == index ? "p-2" : "opacity-50"

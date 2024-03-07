@@ -2,7 +2,7 @@ import { AnimationProps, motion as m } from "framer-motion";
 import { ProductInterface } from "../types/Product";
 import { CiTrash } from "react-icons/ci";
 
-const parentVariants: AnimationProps["variants"] = {
+export const parentVariants: AnimationProps["variants"] = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 100,
@@ -13,7 +13,7 @@ const parentVariants: AnimationProps["variants"] = {
     },
   },
 };
-const childrenVariants: AnimationProps["variants"] = {
+export const childrenVariants: AnimationProps["variants"] = {
   hidden: { x: "-100vw", opacity: 0 },
   visible: {
     x: 0,
